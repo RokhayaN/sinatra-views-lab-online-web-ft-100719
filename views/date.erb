@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <h1>Today</h1>
-    <p>The date is thursday a <time datetime="2019-28-10">28 November 2019</time>.</p>
-  </head>
-  <body></body>
-</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Date</title>
+</head>
+<body>
+  <h1>Today</h1>
+  <p>The date is <% days = %w(Sunday Monday Tuesday Wednesday Thursday Friday Saturday) %><% months = %w(January February March April May June July August September October November December) %><% currentTime = Time.now %><%= days[currentTime.wday] + ', ' + months[currentTime.month - 1] + ' ' + format('%02d', currentTime.mday) + ', ' + currentTime.year.to_s %>.</p>
+</body>
+</html> 
